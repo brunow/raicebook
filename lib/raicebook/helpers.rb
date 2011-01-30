@@ -73,5 +73,27 @@ module Raicebook
       content_tag("fb:like-box", "", options)
     end
     
+    def fb_comments(options={})
+      default_options = {
+        :num_pots      => "10",
+        :wdith => "425",
+        :publish_feed   => "true"
+      }
+      options = default_options.merge(options)
+      
+      content_tag("fb:comments", "", options)
+    end
+    
+    def fb_login_button(options={})
+      default_options = {
+        :width      => "200",
+        :show_faces => "true",
+        :max_rows   => "1"
+      }
+      options = default_options.merge(options)
+      
+      content_tag("fb:login-button", "", options)
+    end
+    
   end
 end
